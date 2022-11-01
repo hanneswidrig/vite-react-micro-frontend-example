@@ -1,0 +1,11 @@
+{
+    "name": "vite-react-micro-frontend-example",
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "pnpm --stream -r run dev"
+    },
+    "dependencies": {
+        "@changesets/cli": "^2.25.2"
+    }
+}
