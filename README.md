@@ -2,8 +2,5 @@
 
 ## Running the repository
 
-| Folder     | Commands              |
-| :--------- | :-------------------- |
-| web-server | http-server -o --cors |
-| micro-ui   | pnpm build            |
-| shell      | pnpm dev              |
+1. `pnpm install`
+2. `pnpm start`

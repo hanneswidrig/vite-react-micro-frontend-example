@@ -1,11 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 import './main.css';
 
 function App(props: unknown) {
     const [count, setCount] = useState(0);
-
-    useEffect(() => console.log('App', props), [props]);
 
     return (
         <div className="grid place-items-center">
