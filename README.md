@@ -1,4 +1,8 @@
-# Vite React Micro-frontend Example
+# Vite React Micro-Frontend Example
+
+## Prerequisites
+
+`node` and `pnpm`
 
 ## Running the repository
 
