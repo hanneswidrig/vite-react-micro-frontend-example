@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-`node` and `pnpm`
+Install [Node.js 16+](https://nodejs.org/en/) and [pnpm 7+](https://pnpm.io/installation) on your machine
 
 ## Running the repository
 
