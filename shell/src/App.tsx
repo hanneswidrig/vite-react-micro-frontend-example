@@ -1,7 +1,6 @@
 import { Manifest } from 'vite';
 import { useState, useEffect, useRef } from 'react';
 
-import './App.css';
 import reactLogo from './assets/react.svg';
 
 async function fetchMicroUis() {
@@ -44,17 +43,25 @@ function App() {
 	}, [microUiLoaded, count]);
 
 	return (
-		<div className="App">
-			<div>
+		<div className="grid place-items-center border-2 border-gray-500 px-3 py-2">
+			<div className="flex w-full">
+				<span className="font-bold text-gray-800">Shell Container</span>
+			</div>
+			<div className="flex justify-center w-full">
 				<a href="https://vitejs.dev" target="_blank">
-					<img src="/vite.svg" className="logo" alt="Vite logo" />
+					<img src="/vite.svg" className="h-24 p-6" alt="Vite logo" />
 				</a>
 				<a href="https://reactjs.org" target="_blank">
-					<img src={reactLogo} className="logo react" alt="React logo" />
+					<img src={reactLogo} className="h-24 p-6" alt="React logo" />
 				</a>
 			</div>
-			<div className="card">
-				<button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
+			<div className="p-8">
+				<button
+					className="bg-gray-800 hover:bg-gray-900 text-white py-2 px-4 rounded-full"
+					onClick={() => setCount((count) => count + 1)}
+				>
+					shell count is {count}
+				</button>
 			</div>
 			<vite-micro-ui-element ref={microUiRef}></vite-micro-ui-element>
 		</div>
