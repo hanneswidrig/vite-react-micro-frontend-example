@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
 	plugins: [react()],
 	build: {
-		outDir: '../web-server',
+		outDir: '../web-server/micro-ui',
 		emptyOutDir: true,
 		manifest: true,
 	},
