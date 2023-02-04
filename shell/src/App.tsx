@@ -27,7 +27,7 @@ function useMicroUiComponent(name: string) {
 	return { microUiLoaded };
 }
 
-function App() {
+export function App() {
 	const [count, setCount] = useState(0);
 	const { microUiLoaded } = useMicroUiComponent("vite-micro-ui-element");
 	const microUiRef = useRef<(HTMLElement & Record<string, any>) | null>(null);
@@ -67,5 +67,3 @@ function App() {
 		</div>
 	);
 }
-
-export default App;

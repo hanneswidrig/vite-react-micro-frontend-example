@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import "./main.css";
 
-function App(props: { number?: number }) {
+export function App(props: { number?: number }) {
 	const [count, setCount] = useState(0);
 
 	return (
@@ -24,5 +24,3 @@ function App(props: { number?: number }) {
 		</div>
 	);
 }
-
-export default App;

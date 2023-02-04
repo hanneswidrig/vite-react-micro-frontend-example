@@ -1,6 +1,6 @@
 import { createRoot } from "react-dom/client";
 
-import App from "./App";
+import { App } from "./App";
 import { registerReactWebComponent } from "./registerReactWebComponent";
 
 if (import.meta.env.DEV) {
