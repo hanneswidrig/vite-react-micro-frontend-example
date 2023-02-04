@@ -1,17 +1,17 @@
-import { Manifest } from 'vite';
-import { useState, useEffect, useRef } from 'react';
+import { Manifest } from "vite";
+import { useState, useEffect, useRef } from "react";
 
-import reactLogo from './assets/react.svg';
+import reactLogo from "./assets/react.svg";
 
 async function fetchMicroUis() {
-	const manifestUrl = 'http://127.0.0.1:8080/micro-ui/manifest.json';
+	const manifestUrl = "http://127.0.0.1:8080/micro-ui/manifest.json";
 	const manifest = await fetch(manifestUrl).then<Manifest>((response) => response.json());
 	const microUis = Object.values(manifest).filter(({ isEntry }) => isEntry);
 	for (const microUi of microUis) {
-		const script = document.createElement('script');
-		script.type = 'module';
+		const script = document.createElement("script");
+		script.type = "module";
 		script.src = `http://127.0.0.1:8080/micro-ui/${microUi.file}`;
-		document.body.insertAdjacentElement('beforeend', script);
+		document.body.insertAdjacentElement("beforeend", script);
 	}
 }
 
@@ -29,7 +29,7 @@ function useMicroUiComponent(name: string) {
 
 function App() {
 	const [count, setCount] = useState(0);
-	const { microUiLoaded } = useMicroUiComponent('vite-micro-ui-element');
+	const { microUiLoaded } = useMicroUiComponent("vite-micro-ui-element");
 	const microUiRef = useRef<(HTMLElement & Record<string, any>) | null>(null);
 
 	useEffect(() => {

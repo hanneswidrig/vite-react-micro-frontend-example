@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-import './main.css';
+import "./main.css";
 
 function App(props: { number?: number }) {
 	const [count, setCount] = useState(0);

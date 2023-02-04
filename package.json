@@ -3,7 +3,8 @@
 	"version": "0.0.1",
 	"type": "module",
 	"scripts": {
-		"start": "zx ./start.mjs"
+		"start": "zx ./start.mjs",
+		"format": "prettier --write --cache ."
 	},
 	"devDependencies": {
 		"@changesets/cli": "^2.26.0",

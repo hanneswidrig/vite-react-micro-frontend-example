@@ -1,6 +1,6 @@
-import { FC } from 'react';
-import { Manifest } from 'vite';
-import { createRoot, Root } from 'react-dom/client';
+import { FC } from "react";
+import { Manifest } from "vite";
+import { createRoot, Root } from "react-dom/client";
 
 type Prop = {
 	propName: string;
@@ -18,17 +18,17 @@ type Prop = {
 export function registerReactWebComponent(ReactComponent: FC<any>, tag: string, defaultProps: Prop[] = []) {
 	let webComponent: typeof WebComponent.prototype;
 
-	const root = Symbol('root');
-	const props = Symbol('props');
-	const dirty = Symbol('dirty');
-	const observer = Symbol('observer');
+	const root = Symbol("root");
+	const props = Symbol("props");
+	const dirty = Symbol("dirty");
+	const observer = Symbol("observer");
 
 	function inferAttributeValue(attribute: string): boolean | number | string | null {
 		const value = webComponent.getAttribute(attribute);
 
-		const booleanCase = value === '' || value === null;
+		const booleanCase = value === "" || value === null;
 		if (booleanCase) {
-			return value === '';
+			return value === "";
 		}
 
 		const numberCase = !isNaN(parseFloat(value)) && !isNaN(Number(value));
@@ -47,7 +47,7 @@ export function registerReactWebComponent(ReactComponent: FC<any>, tag: string, 
 	function mapAttributesToProps(mutationList: MutationRecord[]): void {
 		const attributes = new Set(
 			mutationList
-				.filter(({ type, attributeName }) => type === 'attributes' && attributeName !== null)
+				.filter(({ type, attributeName }) => type === "attributes" && attributeName !== null)
 				.map(({ attributeName }) => attributeName as string),
 		);
 
@@ -75,17 +75,17 @@ export function registerReactWebComponent(ReactComponent: FC<any>, tag: string, 
 
 		const qualifiedName = prop.attrName ?? prop.propName;
 		switch (typeof value) {
-			case 'boolean':
+			case "boolean":
 				if (value) {
-					webComponent.setAttribute(qualifiedName, '');
+					webComponent.setAttribute(qualifiedName, "");
 				} else {
 					webComponent.removeAttribute(qualifiedName);
 				}
 				break;
-			case 'number':
+			case "number":
 				webComponent.setAttribute(qualifiedName, String(value));
 				break;
-			case 'string':
+			case "string":
 				webComponent.setAttribute(qualifiedName, String(`'${value}'`));
 				break;
 			default:
@@ -126,25 +126,25 @@ export function registerReactWebComponent(ReactComponent: FC<any>, tag: string, 
 			webComponent = this;
 			initializeProperties();
 
-			const mountPoint = document.createElement('div');
-			mountPoint.setAttribute('id', 'root');
+			const mountPoint = document.createElement("div");
+			mountPoint.setAttribute("id", "root");
 
-			const shadowRoot = this.attachShadow({ mode: 'open' });
+			const shadowRoot = this.attachShadow({ mode: "open" });
 			shadowRoot.appendChild(mountPoint);
 
 			const metaUrl = import.meta.url;
-			const rootUrl = new URL('..', metaUrl);
-			const manifestUrl = new URL('manifest.json', rootUrl).toString();
+			const rootUrl = new URL("..", metaUrl);
+			const manifestUrl = new URL("manifest.json", rootUrl).toString();
 
 			fetch(manifestUrl)
 				.then((response) => response.json())
 				.then((manifest: Manifest) => {
 					const entryChunk = Object.values(manifest).filter(({ isEntry }) => isEntry)[0];
 					for (const cssPath of entryChunk.css ?? []) {
-						const cssFile = document.createElement('link');
-						cssFile.setAttribute('rel', 'stylesheet');
-						cssFile.setAttribute('href', new URL(cssPath, rootUrl).toString());
-						cssFile.setAttribute('type', 'text/css');
+						const cssFile = document.createElement("link");
+						cssFile.setAttribute("rel", "stylesheet");
+						cssFile.setAttribute("href", new URL(cssPath, rootUrl).toString());
+						cssFile.setAttribute("type", "text/css");
 						shadowRoot.appendChild(cssFile);
 					}
 				});
@@ -196,7 +196,7 @@ export function registerReactWebComponent(ReactComponent: FC<any>, tag: string, 
 			if (upgradeRequired) {
 				for (const key of Object.keys(this[props])) {
 					const prop = defaultProps.find(({ propName }) => propName === key);
-					const attribute = prop?.attrName ?? prop?.propName ?? '';
+					const attribute = prop?.attrName ?? prop?.propName ?? "";
 					const attrValue = inferAttributeValue(attribute);
 					const descriptor = Object.getOwnPropertyDescriptor(this, key);
 
