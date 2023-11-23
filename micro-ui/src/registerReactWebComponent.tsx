@@ -114,11 +114,11 @@ export function registerReactWebComponent(ReactComponent: FC<any>, tag: string, 
 	}
 
 	const WebComponent = class ReactWebComponent extends HTMLElement {
-		[propertyKey: string]: unknown;
+		[propertyKey: PropertyKey]: unknown;
 
 		[root]: Root;
-		[props]: Record<string, unknown> = {};
-		[dirty]: Map<string, unknown> = new Map();
+		[props]: Record<PropertyKey, unknown> = {};
+		[dirty]: Map<PropertyKey, unknown> = new Map();
 		[observer]: MutationObserver;
 
 		constructor() {
@@ -134,7 +134,7 @@ export function registerReactWebComponent(ReactComponent: FC<any>, tag: string, 
 
 			const metaUrl = import.meta.url;
 			const rootUrl = new URL("..", metaUrl);
-			const manifestUrl = new URL("manifest.json", rootUrl).toString();
+			const manifestUrl = new URL(".vite/manifest.json", rootUrl).toString();
 
 			fetch(manifestUrl)
 				.then((response) => response.json())

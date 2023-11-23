@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import reactLogo from "./assets/react.svg";
 
 async function fetchMicroUis() {
-	const manifestUrl = "http://127.0.0.1:8080/micro-ui/manifest.json";
+	const manifestUrl = "http://127.0.0.1:8080/micro-ui/.vite/manifest.json";
 	const manifest = await fetch(manifestUrl).then<Manifest>((response) => response.json());
 	const microUis = Object.values(manifest).filter(({ isEntry }) => isEntry);
 	for (const microUi of microUis) {
