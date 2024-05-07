@@ -8,18 +8,22 @@
 		"preview": "vite preview"
 	},
 	"dependencies": {
-		"react": "^18.2.0",
-		"react-dom": "^18.2.0"
+		"react": "19.0.0-beta-e7d213dfb0-20240507",
+		"react-dom": "19.0.0-beta-e7d213dfb0-20240507"
 	},
 	"devDependencies": {
-		"@types/react": "^18.2.78",
-		"@types/react-dom": "^18.2.25",
+		"@types/react": "npm:types-react@beta",
+    	"@types/react-dom": "npm:types-react-dom@beta",
 		"@vitejs/plugin-react": "^4.2.1",
 		"autoprefixer": "^10.4.19",
 		"postcss": "^8.4.38",
 		"prettier": "^3.2.5",
 		"tailwindcss": "^3.4.3",
 		"typescript": "^5.4.5",
-		"vite": "^5.2.8"
+		"vite": "^5.2.11"
+	},
+	"overrides": {
+		"@types/react": "npm:types-react@beta",
+		"@types/react-dom": "npm:types-react-dom@beta"
 	}
 }

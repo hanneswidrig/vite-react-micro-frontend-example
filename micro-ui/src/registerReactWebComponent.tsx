@@ -1,6 +1,5 @@
-import { FC } from "react";
-import { Manifest } from "vite";
-import { createRoot, Root } from "react-dom/client";
+import type { Manifest } from "vite";
+import { createRoot, type Root } from "react-dom/client";
 
 type Prop = {
 	propName: string;
@@ -15,7 +14,7 @@ type Prop = {
  * @param tag - Name for the new custom element. Note that custom element names must contain a hyphen.
  * @param defaultProps - properties to provide to wrapped React component
  */
-export function registerReactWebComponent(ReactComponent: FC<any>, tag: string, defaultProps: Prop[] = []) {
+export function registerReactWebComponent(ReactComponent: React.FC, tag: string, defaultProps: Prop[] = []) {
 	let webComponent: typeof WebComponent.prototype;
 
 	const root = Symbol("root");
@@ -31,7 +30,7 @@ export function registerReactWebComponent(ReactComponent: FC<any>, tag: string, 
 			return value === "";
 		}
 
-		const numberCase = !isNaN(parseFloat(value)) && !isNaN(Number(value));
+		const numberCase = !Number.isNaN(Number.parseFloat(value)) && !Number.isNaN(Number(value));
 		if (numberCase) {
 			return Number(value);
 		}

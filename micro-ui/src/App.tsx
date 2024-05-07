@@ -12,6 +12,7 @@ export function App(props: { number?: number }) {
 			</div>
 			<div className="flex justify-between w-full gap-2">
 				<button
+					type="button"
 					className="bg-blue-800 hover:bg-blue-900 text-white py-2 px-4 rounded-full"
 					onClick={() => setCount((count) => count + 1)}
 				>

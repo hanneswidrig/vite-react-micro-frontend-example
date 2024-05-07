@@ -1,61 +1,68 @@
-lockfileVersion: '6.0'
+lockfileVersion: '9.0'
 
 settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-devDependencies:
-  prettier:
-    specifier: ^3.2.5
-    version: 3.2.5
-  zx:
-    specifier: ^8.0.1
-    version: 8.0.1
+importers:
+
+  .:
+    devDependencies:
+      prettier:
+        specifier: ^3.2.5
+        version: 3.2.5
+      zx:
+        specifier: ^8.0.2
+        version: 8.0.2
 
 packages:
 
-  /@types/fs-extra@11.0.4:
+  '@types/fs-extra@11.0.4':
     resolution: {integrity: sha512-yTbItCNreRooED33qjunPthRcSjERP1r4MqCZc7wv0u2sUkzTFp45tgUfS5+r7FrZPdmCCNflLhVSP/o+SemsQ==}
-    requiresBuild: true
-    dependencies:
-      '@types/jsonfile': 6.1.4
-      '@types/node': 20.12.7
-    dev: true
-    optional: true
 
-  /@types/jsonfile@6.1.4:
+  '@types/jsonfile@6.1.4':
     resolution: {integrity: sha512-D5qGUYwjvnNNextdU59/+fI+spnwtTFmyQP0h+PfIOSkNfpU6AOICUOkm4i0OnSk+NyjdPJrxCDro0sJsWlRpQ==}
-    requiresBuild: true
-    dependencies:
-      '@types/node': 20.12.7
-    dev: true
-    optional: true
 
-  /@types/node@20.12.7:
-    resolution: {integrity: sha512-wq0cICSkRLVaf3UGLMGItu/PtdY7oaXaI/RVU+xliKVOtRna3PRY57ZDfztpDL0n11vfymMUnXv8QwYCO7L1wg==}
-    requiresBuild: true
-    dependencies:
-      undici-types: 5.26.5
-    dev: true
-    optional: true
+  '@types/node@20.12.10':
+    resolution: {integrity: sha512-Eem5pH9pmWBHoGAT8Dr5fdc5rYA+4NAovdM4EktRPVAAiJhmWWfQrA0cFhAbOsQdSfIHjAud6YdkbL69+zSKjw==}
 
-  /prettier@3.2.5:
+  prettier@3.2.5:
     resolution: {integrity: sha512-3/GWa9aOC0YeD7LUfvOG2NiDyhOWRvt1k+rcKhOuYnMY24iiCphgneUfJDyFXd6rZCAnuLBv6UeAULtrhT/F4A==}
     engines: {node: '>=14'}
     hasBin: true
-    dev: true
 
-  /undici-types@5.26.5:
+  undici-types@5.26.5:
     resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
-    requiresBuild: true
-    dev: true
-    optional: true
 
-  /zx@8.0.1:
-    resolution: {integrity: sha512-Y+ITW1GQjADk7qgrbhnukMgoNsJmlyx53cUQ6/6NXU+BMBdCbTc6flTOHUctmzKvPjTmdwaddzJY/dbLie9sQg==}
+  zx@8.0.2:
+    resolution: {integrity: sha512-3g+ePtPYmyrjRuASlJiUhkje1je4a47woML/fzTKBb9PA5BzRQbSswwyJ8nlFWJjA1ORRi6TMyAdhuz/jK+Gaw==}
     engines: {node: '>= 16.0.0'}
     hasBin: true
+
+snapshots:
+
+  '@types/fs-extra@11.0.4':
+    dependencies:
+      '@types/jsonfile': 6.1.4
+      '@types/node': 20.12.10
+    optional: true
+
+  '@types/jsonfile@6.1.4':
+    dependencies:
+      '@types/node': 20.12.10
+    optional: true
+
+  '@types/node@20.12.10':
+    dependencies:
+      undici-types: 5.26.5
+    optional: true
+
+  prettier@3.2.5: {}
+
+  undici-types@5.26.5:
+    optional: true
+
+  zx@8.0.2:
     optionalDependencies:
       '@types/fs-extra': 11.0.4
-      '@types/node': 20.12.7
-    dev: true
+      '@types/node': 20.12.10

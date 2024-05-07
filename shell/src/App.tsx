@@ -1,4 +1,4 @@
-import { Manifest } from "vite";
+import type { Manifest } from "vite";
 import { useState, useEffect, useRef } from "react";
 
 import reactLogo from "./assets/react.svg";
@@ -22,7 +22,7 @@ function useMicroUiComponent(name: string) {
 		Promise.all([fetchMicroUis(), customElements.whenDefined(name)])
 			.then(() => setMicroUiLoaded(true))
 			.catch((error) => console.error(error));
-	}, []);
+	}, [name]);
 
 	return { microUiLoaded };
 }
@@ -30,7 +30,7 @@ function useMicroUiComponent(name: string) {
 export function App() {
 	const [count, setCount] = useState(0);
 	const { microUiLoaded } = useMicroUiComponent("vite-micro-ui-element");
-	const microUiRef = useRef<(HTMLElement & Record<string, any>) | null>(null);
+	const microUiRef = useRef<HTMLElement & Record<string, unknown>>(null);
 
 	useEffect(() => {
 		if (microUiLoaded && microUiRef.current) {
@@ -48,22 +48,23 @@ export function App() {
 				<span className="font-bold text-gray-800">Shell Container</span>
 			</div>
 			<div className="flex justify-center w-full">
-				<a href="https://vitejs.dev" target="_blank">
+				<a href="https://vitejs.dev" target="_blank" rel="noreferrer">
 					<img src="/vite.svg" className="h-24 p-6" alt="Vite logo" />
 				</a>
-				<a href="https://reactjs.org" target="_blank">
+				<a href="https://reactjs.org" target="_blank" rel="noreferrer">
 					<img src={reactLogo} className="h-24 p-6" alt="React logo" />
 				</a>
 			</div>
 			<div className="p-8">
 				<button
+					type="button"
 					className="bg-gray-800 hover:bg-gray-900 text-white py-2 px-4 rounded-full"
 					onClick={() => setCount((count) => count + 1)}
 				>
 					shell count is {count}
 				</button>
 			</div>
-			<vite-micro-ui-element ref={microUiRef}></vite-micro-ui-element>
+			<vite-micro-ui-element ref={microUiRef} />
 		</div>
 	);
 }
