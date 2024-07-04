@@ -2,6 +2,7 @@
 
 import "zx/globals";
 
+process.env.FORCE_COLOR = "1";
 await fs.rm("web-server", { recursive: true, force: true });
 await fs.mkdir("web-server");
 

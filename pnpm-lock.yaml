@@ -9,11 +9,11 @@ importers:
   .:
     devDependencies:
       prettier:
-        specifier: ^3.3.1
-        version: 3.3.1
+        specifier: ^3.3.2
+        version: 3.3.2
       zx:
-        specifier: ^8.1.2
-        version: 8.1.2
+        specifier: ^8.1.4
+        version: 8.1.4
 
 packages:
 
@@ -23,19 +23,19 @@ packages:
   '@types/jsonfile@6.1.4':
     resolution: {integrity: sha512-D5qGUYwjvnNNextdU59/+fI+spnwtTFmyQP0h+PfIOSkNfpU6AOICUOkm4i0OnSk+NyjdPJrxCDro0sJsWlRpQ==}
 
-  '@types/node@20.14.2':
-    resolution: {integrity: sha512-xyu6WAMVwv6AKFLB+e/7ySZVr/0zLCzOa7rSpq6jNwpqOrUbcACDWC+53d4n2QHOnDou0fbIsg8wZu/sxrnI4Q==}
+  '@types/node@20.14.9':
+    resolution: {integrity: sha512-06OCtnTXtWOZBJlRApleWndH4JsRVs1pDCc8dLSQp+7PpUpX3ePdHyeNSFTeSe7FtKyQkrlPvHwJOW3SLd8Oyg==}
 
-  prettier@3.3.1:
-    resolution: {integrity: sha512-7CAwy5dRsxs8PHXT3twixW9/OEll8MLE0VRPCJyl7CkS6VHGPSlsVaWTiASPTyGyYRyApxlaWTzwUxVNrhcwDg==}
+  prettier@3.3.2:
+    resolution: {integrity: sha512-rAVeHYMcv8ATV5d508CFdn+8/pHPpXeIid1DdrPwXnaAdH7cqjVbpJaT5eq4yRAFU/lsbwYwSF/n5iNrdJHPQA==}
     engines: {node: '>=14'}
     hasBin: true
 
   undici-types@5.26.5:
     resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
 
-  zx@8.1.2:
-    resolution: {integrity: sha512-zkCiXKh8D/eo6r58OmJvO5mc2NthcSRvysb3fuS6VQlHPbEPBcxduRwM3m6ZfHj+7cLHcrahCnuO2TDAbW+6xw==}
+  zx@8.1.4:
+    resolution: {integrity: sha512-QFDYYpnzdpRiJ3dL2102Cw26FpXpWshW4QLTGxiYfIcwdAqg084jRCkK/kuP/NOSkxOjydRwNFG81qzA5r1a6w==}
     engines: {node: '>= 12.17.0'}
     hasBin: true
 
@@ -44,25 +44,25 @@ snapshots:
   '@types/fs-extra@11.0.4':
     dependencies:
       '@types/jsonfile': 6.1.4
-      '@types/node': 20.14.2
+      '@types/node': 20.14.9
     optional: true
 
   '@types/jsonfile@6.1.4':
     dependencies:
-      '@types/node': 20.14.2
+      '@types/node': 20.14.9
     optional: true
 
-  '@types/node@20.14.2':
+  '@types/node@20.14.9':
     dependencies:
       undici-types: 5.26.5
     optional: true
 
-  prettier@3.3.1: {}
+  prettier@3.3.2: {}
 
   undici-types@5.26.5:
     optional: true
 
-  zx@8.1.2:
+  zx@8.1.4:
     optionalDependencies:
       '@types/fs-extra': 11.0.4
-      '@types/node': 20.14.2
+      '@types/node': 20.14.9
