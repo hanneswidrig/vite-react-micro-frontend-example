@@ -15,8 +15,8 @@ importers:
         specifier: ^5.6.3
         version: 5.6.3
       zx:
-        specifier: ^8.1.9
-        version: 8.1.9
+        specifier: ^8.2.2
+        version: 8.2.2
 
 packages:
 
@@ -26,8 +26,8 @@ packages:
   '@types/jsonfile@6.1.4':
     resolution: {integrity: sha512-D5qGUYwjvnNNextdU59/+fI+spnwtTFmyQP0h+PfIOSkNfpU6AOICUOkm4i0OnSk+NyjdPJrxCDro0sJsWlRpQ==}
 
-  '@types/node@22.8.1':
-    resolution: {integrity: sha512-k6Gi8Yyo8EtrNtkHXutUu2corfDf9su95VYVP10aGYMMROM6SAItZi0w1XszA6RtWTHSVp5OeFof37w0IEqCQg==}
+  '@types/node@22.9.0':
+    resolution: {integrity: sha512-vuyHg81vvWA1Z1ELfvLko2c8f34gyA0zaic0+Rllc5lbCnbSyuvb2Oxpm6TAUAC/2xZN3QGqxBNggD1nNR2AfQ==}
 
   prettier@3.3.3:
     resolution: {integrity: sha512-i2tDNA0O5IrMO757lfrdQZCc2jPNDVntV0m/+4whiDfWaTKfMNgR7Qz0NAeGz/nRqF4m5/6CLzbP4/liHt12Ew==}
@@ -42,8 +42,8 @@ packages:
   undici-types@6.19.8:
     resolution: {integrity: sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==}
 
-  zx@8.1.9:
-    resolution: {integrity: sha512-UHuLHphHmsBYKkAchkSrEN4nzDyagafqC9HUxtc1J7eopaScW6H9dsLJ1lmkAntnLtDTGoM8fa+jrJrXiIfKFA==}
+  zx@8.2.2:
+    resolution: {integrity: sha512-HSIdpU5P2ONI0nssnhsUZNCH9Sd/Z8LIFk9n8QTbu6JufzJx7qR7ajrMN21s06JqWSApcN012377iWsv8Vs5bg==}
     engines: {node: '>= 12.17.0'}
     hasBin: true
 
@@ -52,15 +52,15 @@ snapshots:
   '@types/fs-extra@11.0.4':
     dependencies:
       '@types/jsonfile': 6.1.4
-      '@types/node': 22.8.1
+      '@types/node': 22.9.0
     optional: true
 
   '@types/jsonfile@6.1.4':
     dependencies:
-      '@types/node': 22.8.1
+      '@types/node': 22.9.0
     optional: true
 
-  '@types/node@22.8.1':
+  '@types/node@22.9.0':
     dependencies:
       undici-types: 6.19.8
     optional: true
@@ -72,7 +72,7 @@ snapshots:
   undici-types@6.19.8:
     optional: true
 
-  zx@8.1.9:
+  zx@8.2.2:
     optionalDependencies:
       '@types/fs-extra': 11.0.4
-      '@types/node': 22.8.1
+      '@types/node': 22.9.0
